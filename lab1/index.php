@@ -14,7 +14,7 @@ $currentTime = date("H:i:s");
     <header>
         <div class="header-container">
             <img src="logo.png" alt="Логотип МосПолитеха" class="logo">
-            <h1>Самостоятельная работа: Hello, World!</h1>
+            <h1>Домашняя работа: Hello, World! (Лабараторная работа №1)</h1>
         </div>
     </header>
     <main>
@@ -34,6 +34,6 @@ $currentTime = date("H:i:s");
         <p>Задание для самостоятельной работы</p>
     </footer>
 
-    
+
 </body>
 </html>
