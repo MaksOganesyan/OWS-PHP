@@ -33,5 +33,7 @@ $currentTime = date("H:i:s");
     <footer>
         <p>Задание для самостоятельной работы</p>
     </footer>
+
+    
 </body>
 </html>
