@@ -8,3 +8,4 @@ $b = 12;
 $hypotenuse = sqrt($a * $a + $b * $b);
 $hypotenuse_formatted = number_format($hypotenuse, 2, '.', '');
 ?>
+
