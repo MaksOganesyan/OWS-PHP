@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /PHP-APP/
+
+# Если это не файл и не директория
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Если запрос не начинается с /public/
+RewriteCond %{REQUEST_URI} !^/PHP-APP/public/
+# Перенаправляем в public/
+RewriteRule ^(.*)$ public/$1 [L,QSA]
