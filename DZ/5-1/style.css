@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.menu {
+    margin-bottom: 20px;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: rgb(131, 131, 141);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.menu a.active {
+    background-color: rgb(7, 39, 118);
+}
+
+.menu .sub-menu a {
+    font-size: 0.8em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: blue;
+}
+
+.pagination a:hover {
+    border: 2px solid blue;
+}
+
+form {
+    max-width: 600px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.contact-list a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: blue;
+}
+
+.contact-list a.active {
+    background-color: #f0f0f0;
+    border: 1px solid blue;
+}
