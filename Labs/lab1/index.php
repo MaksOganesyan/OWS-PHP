@@ -10,20 +10,21 @@ include 'hypotenuse.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вычисление гипотенузы</title>
+    <title>Вычисление гипотенузы и второго катета</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="header-container">
             <img src="logo.png" alt="Логотип МосПолитеха" class="logo">
-            <h1>Домашняя работа: Вычисление гипотенузы (Лабораторная работа №1.1)</h1>
+            <h1>Лабораторная работа №1.1</h1>
         </div>
     </header>
     <main>
         <div class="content">
             <h2>Результат вычисления</h2>
             <p>Гипотенуза треугольника с катетами a = 27 и b = 12 равна: <span id="hypotenuse"><?php echo $hypotenuse_formatted; ?></span></p>
+            <p>Второй катет треугольника с гипотенузой a = 27 и первым катетом b = 12 равен: <span id="second_cathetus"><?php echo $second_cathetus_formatted; ?></span></p>
         </div>
     </main>
     <footer>
@@ -31,5 +32,3 @@ include 'hypotenuse.php';
     </footer>
 </body>
 </html>
-
-
