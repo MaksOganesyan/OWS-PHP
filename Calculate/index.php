@@ -41,8 +41,9 @@
         <div class="calculator-grid">
             <button class="bg-red-500 text-white" onclick="clearDisplay()">C</button>
             <button class="bg-red-500 text-white" onclick="backspace()">◄</button>
-            <button class="bg-gray-300" onclick="appendToDisplay('(')">(</button>
-            <button class="bg-gray-300" onclick="appendToDisplay(')')">)</button>
+            <button class="bg-blue-500 text-white" onclick="appendToDisplay('sin(')">sin</button>
+            <button class="bg-blue-500 text-white" onclick="appendToDisplay('cos(')">cos</button>
+            <button class="bg-blue-500 text-white" onclick="appendToDisplay('tan(')">tan</button>
             <button class="bg-blue-500 text-white" onclick="appendToDisplay('/')">/</button>
             <button class="bg-gray-300" onclick="appendToDisplay('7')">7</button>
             <button class="bg-gray-300" onclick="appendToDisplay('8')">8</button>
@@ -57,6 +58,8 @@
             <button class="bg-gray-300" onclick="appendToDisplay('3')">3</button>
             <button class="bg-blue-500 text-white" onclick="appendToDisplay('+')">+</button>
             <button class="bg-gray-300" onclick="appendToDisplay('0')">0</button>
+            <button class="bg-gray-300" onclick="appendToDisplay('(')">(</button>
+            <button class="bg-gray-300" onclick="appendToDisplay(')')">)</button>
             <button class="bg-gray-300 col-span-2" onclick="calculate()">=</button>
         </div>
     </div>
@@ -87,11 +90,21 @@
 
         async function calculate() {
             const display = document.getElementById('display');
-            const expression = display.value;
+            const expression = display.value.trim();
             const error = document.getElementById('error');
 
             if (!expression) {
                 display.value = 'Error: Empty expression';
+                error.textContent = 'Expression: ';
+                error.style.display = 'block';
+                return;
+            }
+
+            // Простая проверка допустимых символов
+            if (!/^[0-9+\-*\/\(\)a-zA-Z]+$/.test(expression)) {
+                display.value = 'Error: Invalid characters';
+                error.textContent = `Expression: ${expression}`;
+                error.style.display = 'block';
                 return;
             }
 
@@ -123,6 +136,22 @@
                 error.style.display = 'block';
             }
         }
+
+        // Загрузка начального выражения из calculate.php
+        async function loadInitialExpression() {
+            try {
+                const response = await fetch('calculate.php');
+                const result = await response.text();
+                if (!result.startsWith('Error') && result.trim() !== '') {
+                    document.getElementById('display').value = result;
+                }
+            } catch (err) {
+                console.error('Failed to load initial expression:', err);
+            }
+        }
+
+        // Вызов при загрузке страницы
+        window.onload = loadInitialExpression;
     </script>
 </body>
 </html>
